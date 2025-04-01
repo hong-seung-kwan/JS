@@ -165,14 +165,16 @@ const avg = calcScore(students2,'math');
 console.log(avg);
 
 // Q17
-const fun10 = function(employees,x) {
+const fun10 = function(employees,position) {
   let sum10 = 0;
+  let count = 0;
   for(const employee of employees){
-    if(employee.x === employees.x){
-      sum10 = sum10 + employees['salary'];
+    if(employee.position === position){
+      sum10 = sum10 + employee.salary;
+      count++;
     }
   }
-  return sum10 / employees.length;
+  return sum10 / count;
 }
 const employees = [
   {name: "짱구", position:"부장", salary: 500},
