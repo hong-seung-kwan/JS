@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  
+</head>
+<body>
+  <script>
+    // 스코프: 변수의 생명주기를 결정하는 범위
+
+    // 지역 스코프
+    function func1(){
+      let localVar = '볼보';
+      console.log('함수내부에서 사용:', localVar)
+    }
+    func1();
+    console.log('함수밖에서 사용:', localVar)
+    // 지역변수는 함수가 끝나면 메모리에서 소멸되므로
+    // 블록을 벗어나면 사용할 수 없다
+
+    // 전역 스코프
+    // 전역 컨텍스트에서 선언된 변수는 전역 변수
+    // 어디서나 사용 가능
+    let globalVar = '기아';
+    console.log(globalVar);
+
+    function func2(){
+      console.log(globalVar);
+    }
+    func2();
+  </script>
+</body>
+</html>
