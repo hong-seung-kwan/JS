@@ -22,11 +22,9 @@ console.log(Math.sign(0)); // 0
 console.log(Math.sign(4)); // 1
 
 // 제곱
-
 console.log(Math.pow(8, 2)); // 8^2 = 64
 
 // 제곱근(루트)
-
 console.log(Math.sqrt(64)); // 8
 
 // 절대값
@@ -55,8 +53,7 @@ let num = Math.random();
 console.log(num);
 // 여기에 10을 곱하면 0~9 사이의 값으로 변환
 console.log(num * 10);
-
-console.log(Math.floor(num * 10));
 // 다시 floor 함수를 사용하면 소수점 이하자리는 제거됨
 // 따라서 정수 0~9 사이의 값이 반환됨
+console.log(Math.floor(num * 10));
 console.log(Math.floor(num * 10) + 1);

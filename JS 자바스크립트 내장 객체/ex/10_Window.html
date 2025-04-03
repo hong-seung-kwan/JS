@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- script 태그는 <head>  또는 <body> 안에 작성 -->
+    <script>
+      // window객체: 브라우저에서 제공하는 객체
+      // 창과 관련된 함수를 가지고 있음
+
+      // alert('alert창입니다..');
+
+      // 대화상자가 나타나고, 확인 또는 취소를 선택할 수 있음
+      // const result = confirm('정말 삭제하시겠습니까?');
+      // console.log(result);
+      // 확인을 누르면 true 취소를 누르면 false가 반환됨
+      // if(confirm('정말 삭제하시겠습니까?')) {
+      //   console.log('삭제되었습니다!');
+      // } else {
+      //   console.log('삭제가 취소되었습니다..');
+      // }
+
+      // 사용자가 문자열을 입력할 수 있는 창이 나타남
+      //const input = prompt('아이디를 입력하세요!');
+      // 값 입력 + 확인 => 사용자가 입력한 데이터
+      // 확인만 => 공백문자
+      // 취소 => null(빈값)
+      // if(input == null) {
+      //   console.log('사용자가 취소 버튼을 눌렀습니다')
+      // }else if(input == ''){
+      //   console.log('사용자가 아무것도 입력하지 않고 확인을 눌렀습니다')
+
+      // }else if(input != '') {
+      //   console.log('사용자가 값을 입력했습니다', input)
+      // }
+      // console.log(input);
+      // 새로운 페이지 열기
+      // open('https://naver.com');
+      // open('https://naver.com', '_blank','width=800,height=600');
+
+
+      // 타이머 함수
+      // 일정 시간이 지난 후에 함수를 실행
+      // 매개변수: 타이머함수, 지연시간
+      // 1초가 지난 후에 메세지를 출력
+      // setTimeout(()=>{
+      //   alert('5초가 지난 후에 함수를 실행!')
+      // }, 5000); // 1000ms => 1s
+      
+      // 함수를 주기적으로 실행
+      // 인자: 타이머함수(실행할코드), 지연시간
+      // 5초 주기로 코드를 실행
+      // 총 5번 수행 후 종료
+      let count = 1;
+      const inter = setInterval(() => {
+        console.log('프로그램 실행..');
+        count++;
+
+        if(count > 5){
+          console.log('프로그램 종료');
+          clearInterval(inter); // setInterval 종료
+        }
+      },3000);
+    </script>
+</head>
+<body>
+  
+</body>
+</html>
