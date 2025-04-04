@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  
+</head>
+<body>
+  <button id="btn1">버튼</button>
+  <button id="btn2">버튼</button>
+
+  <script>
+    
+    // HTML 문서가 만들어질때, 이벤트 함수 등록
+    // document: html 문서가 가리키는 객체
+    // 새로운 이벤트를 등록
+    // 인자: 이벤트 종류, 수행할 함수
+    document.addEventListener('DOMContentLoaded', ()=>{
+      
+      // 일반함수와 화살표함수의 this 키워드 차이
+
+      // 아이디를 사용해서 html의 요소를 조회
+      const btn1 = document.getElementById('btn1');
+      const btn2 = document.getElementById('btn2');
+
+      // 버튼을 클릭했을 때 이벤트 처리
+      // onclick 속성에 일반함수를 대입하고 this를 확인
+      // 일반함수의 this는 이벤트가 발생된 요소
+      btn1.onclick = function() {
+        
+        // 버튼을 클릭했을때 해당버튼의 이름 바꾸기
+        this.textContent = "클릭완료!";
+      };
+      btn2.onclick = function() {
+        
+        this.textContent = "클릭완료!";
+      };
+
+      // onclick 속성에 화살표함수를 대입하고 this를 확인
+      // 화살표 함수의 this는 상위 스코프의 this(window객체)
+      // btn2.onclick = () => {
+      //   console.log(this);
+      // }
+    });
+
+  </script>
+</body>
+</html>

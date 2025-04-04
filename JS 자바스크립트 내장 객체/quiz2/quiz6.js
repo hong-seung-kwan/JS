@@ -17,7 +17,7 @@ for (let book of readBook) {
   console.log(book);
   if (book.length >= 7) {
     readBook.delete(book);
-    console.log(`${book}책 목록에서 삭제했습니다.`);
+    console.log(`${book}를 책 목록에서 삭제했습니다.`);
   }
 }
 

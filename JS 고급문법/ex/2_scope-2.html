@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // 전역 변수
+    // 전역변수는 어디서나 사용 가능
+    let a = 1;
+
+    const func1 = function(){
+      // 지역변수
+      // 지역변수는 스코프 안에서만 사용 가능
+      // b는 함수 안에서만 사용 가능
+      let b = 2;
+      console.log(a);
+      console.log(b);
+    }
+
+    console.log(a);
+    func1();
+
+    if(true){
+      // 지역변수
+      // c는 조건문 안에서만 사용 가능
+      let c = 3;
+      console.log(a);
+      console.log(c);
+    }
+
+    for(let i = 0; i < 3; i++) {
+      // i는 지역변수, 반복문 안에서만 사용 가능
+      console.log(i);
+    }
+
+
+    // j는 전역변수, 어디서나 사용가능
+    // for문이 끝난 후에도 변수가 필요할 때는
+    // 전역변수로 만들고 for 안에서는 초기화만 할것
+    // 변수 선언 생략
+    let j = 0;
+    for(j = 0; j < 3; j++){
+      console.log(j);
+    }
+    console.log(j);
+  </script>
+</body>
+</html>
