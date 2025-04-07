@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  
+</head>
+<body>
+  <script>
+
+    // promise 객체를 사용하여 API 호출하기
+
+    function apiCall(){
+      const promise = new Promise((resolve, reject)=>{
+
+        //promise 안에서 비동기 작업
+        const xhr = new XMLHttpRequest();
+        // API 호출
+        xhr.open('GET','https://jsonplaceholder.typicode.com/posts/1');
+        xhr.send();
+
+        // API 응답 처리
+        // 응답이 돌아오면 onload 함수가 실행됨
+        xhr.onload = () => {
+          if(xhr.status == 200){
+            const res = JSON.parse(xhr.response);
+            // return res;
+            // 작업에 성공했으면 상태를 fulfilled로 변경
+            resolve(res);
+          }else{
+            // 작업에 성공했으면 상태를 reject로 변경
+            reject(xhr.status);
+          }
+        }
+      });
+      return promise;
+    }
+    const promise = apiCall();
+
+    console.log(1)
+    console.log(2)
+    console.log(3)
+
+    // promise 상태에 따라 작업을 진행
+    // api 호출에 성공했으면 이어서 then이 실행됨
+    // api 호출에 실패했으면 이어서 catch가 실행됨
+
+    // api 호출은 비동기 방식으로 처리됨
+    // 따라서 api를 호출한 후에 결과를 바로 사용할 수 없음
+    // promise같은 객체를 사용하여 비동기함수를 처리해야함
+    promise
+          .then((response)=>{
+            console.log('API 결과:', response);
+          })
+          .catch((status)=>{
+            console.log(`API 실패 결과: ${status}`);
+          });
+
+  console.log(4)
+  console.log(5)
+
+  // log는 동기식함수
+  // promise의 then은 비동기함수
+  // 동기함수는 순차적으로 실행됨
+  // 비동기함수는 작업이 끝났을때 실행됨
+
+  // 만약에 api가 동기식 함수라면 어떻게 될까?
+  // 서버가 응답을 줄때까지 log(4) log(5)는 실행이 안됨
+  // 처리속도 지연
+  </script>
+</body>
+</html>

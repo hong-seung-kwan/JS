@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  
+</head>
+<body>
+  
+  <script>
+
+    // promise란?
+    // 비동기함수를 처리할 때 사용하는 객체
+    // 비동기함수의 종류: set~같은 타이머 함수 or API호출함수
+
+    // API 호출 함수를 동기식으로 처리한다면 어떻게 될까?
+    // 서버에서 응답을 받을때까지 소요되는 시간만큼
+    // 화면이 정지됨 -> 사용자가 불편.
+
+    // 비동기식으로 처리한다면?
+    // 다음작업 사용 가능
+
+    // promise 객체 없이 API 호출
+
+    // API 호출(API: 서버 프로그램)
+    function apiCall(){
+      //XMLHttpRequest(): API를 호출할 때 사용 하는 객체
+      const xhr = new XMLHttpRequest();
+      
+      // http 방식, API 주소
+      // 테스트 데이터 중에서 첫번째 데이터를 보내줘
+      xhr.open('GET','https://jsonplaceholder.typicode.com/posts/1');
+      // API 호출
+      xhr.send();
+      // 응답받기
+      // onload 속성에 함수를 대입
+      // onload 함수는 비동기 함수
+      // 비동기함수는 순차적으로 실행 x
+      // 서버로부터 응답이 돌아오는 순간 실행됨
+      xhr.onload = () => {
+        // xhr.status: 응답 상태 코드
+        // 200: 응답 성공
+        if(xhr.status == 200){ // 요청 성공
+          // API 응답결과: json형식의 문자열
+          const obj = JSON.parse(xhr.response);
+          console.log('1.함수 호출결과:', obj);
+          return obj; // 응답 데이터
+        }else{ //요청 실패
+          console.error(xhr.status, xhr.statusText);
+          return;
+        }
+        
+      }
+        
+    }
+    // api를 호출하고 응답받기
+    const result = apiCall();
+    console.log('1.함수 호출결과:', result);
+
+    // 이시점에는 서버로부터 응답이 도착하지 않았기 때문에
+    // undefined가 저장됨
+
+    // XMLHttpRequest는 비동기 방식으로 처리하기 때문에
+    // 응답이 올때까지 기다리지 않고 다음코드를 실행함
+    // 따라서 요청 직후에는 바로 결과를 사용할 수 없음
+
+    // 결론: 비동기 방식으로 실행되는 함수는 위와같이 처리할 수 없음
+
+  </script>
+</body>
+</html>
