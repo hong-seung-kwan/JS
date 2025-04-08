@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+  <style>
+    .menu{
+      display: flex;
+      list-style: none;
+      height: 50px;
+      padding: 0;
+      margin: 0;
+      background-color: whitesmoke;
+      border-bottom: 2px solid lightgray;
+    }
+    /* 대메뉴 아이템 */
+    .menu-item{
+      width: 150px;
+      text-align: center;
+      background-color: lightgray;
+      padding: 10px 0;
+      font-weight: bold;
+
+      /* 대메뉴 아래 각 서브메뉴의 위치를 설정하기 위한 기준을 설정 */
+      position: relative;
+    }
+    /* 대메뉴 아이템 위에 마우스를 올리면 배경색 변경 */
+    .menu-item:hover{
+      background-color: darkgray;
+    }
+    /* 서브메뉴 스타일 */
+    .submenu {
+      /* 서브메뉴는 메뉴 바로 아래 붙이기 */
+      /* 부모를 기준으로 위에서 50만큼 떨어진곳에 위치 */
+      position: absolute;
+      top: 50px;
+      list-style: none;
+      width: 150px;
+      padding: 0;
+      margin: 0;
+      border: 1px solid lightgray;
+      /* 애니메이션 효과 */
+      /* 속성 지속시간 빠르기 */
+      /* display는 애니메이션 효과 적용 안됨 */
+      /* 다른 속성을 사용해서 애니메이션 효과 적용 */
+      /* 투명도와 숨김처리를 사용해서 화면에서 안보이도록 설정 */
+      opacity: 0;
+      visibility: hidden;
+      /* 서브메뉴 스르륵 나오는 효과 */
+      /* 메뉴에 높이가 천천히 늘어나면서 롤링효과 */
+      /* sub menu인 ul태그는 0->100으로 높이가 늘어나지만
+         자식인 li태그는 크기가 고정되어 있기때문에
+         ul태그는 펼쳐지지만 li태그는 펼쳐지지않음
+      */
+      max-height: 0px;
+      /* 따라서 overflow 속성을 사용해서 부모에 맞춰서 자식의 크기를 잘라줘야함 */
+      overflow: hidden;
+
+      /* 애니메이션 효과 */
+      /* 서브메뉴가 나타나는 효과를 1초동안 지연 */
+      transition: all 1s ease-out;
+    }
+    /* 대메뉴를 선택했을때, 해당 서브메뉴만 표시 */
+    /* hover이벤트가 발생한 menu-item의 하위 요소 중에서 
+       class=submenu 속성을 가지고 있는 요소를 선택 */
+    .menu-item:hover .submenu {
+      opacity: 1;
+      visibility: visible;
+      max-height: 100px;
+    }
+  
+    /* 서브메뉴의 아이템 */
+    .submenu li {
+      border-bottom: 1px solid lightgray;
+      padding: 10px 0;
+    }
+    /* 서브메뉴의 아이템 위에 마우스를 올리면 배경색 변경 */
+    /* 서브메뉴의 아이템에 마우스를 올리면 배경색 변경 */
+    /* css => js코드로 변경 */
+    /* .submenu li:hover{
+      background-color: whitesmoke;      
+    } */
+  </style>
+</head>
+<body>
+  <!-- 메뉴바 만들기 -->
+  <!-- 서브메뉴가 나타날때 스르륵 펼쳐지는 애니메이션 효과 주기 -->
+  <ul class="menu">
+    <li class="menu-item">
+      대메뉴1
+      <ul class="submenu">
+        <li>서브메뉴 1-1</li>
+        <li>서브메뉴 1-2</li>
+      </ul>
+    </li>
+
+    <li class="menu-item">
+      대메뉴2
+      <ul class="submenu">
+        <li>서브메뉴 2-1</li>
+        <li>서브메뉴 2-2</li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+
+    // sub menu 아래 있는 li태그에 hover 이벤트 설정
+    // li 태그가 하나가 아니기 때문에 all 함수 사용
+    // css 선택자를 그대로 입력
+    // class=submenu 속성을 가지고 있는 요소를 찾고
+    // 하위 요소 중에서 li태그를 선택
+    const submenuItems = document.querySelectorAll('.submenu li');
+    console.log(submenuItems);
+
+    // 모든 li태그에 hover 이벤트를 설정
+    submenuItems.forEach((item)=>{
+      // 이벤트 종류, 수행할 함수
+      // 아이템에 마우스가 올라왔을때
+      item.addEventListener('mouseenter', ()=>{
+        item.style.background='whitesmoke';
+      });
+      item.addEventListener('mouseleave', ()=>{
+        item.style.background='white';
+    });
+  })
+  </script>
+</body>
+</html>

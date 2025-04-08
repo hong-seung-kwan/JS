@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+</head>
+<body>
+  <!-- 키 이벤트 -->
+  <input type="text" oninput="func(event)" onkeydown="func(event)"
+   onkeyup="func(event)">
+
+   <script>
+    // oninput: 입력 내용이 바뀌었을 때
+    // onkeydown: 키를 눌렀을 때
+    // onkeyup: 키를 눌렀다가 뗏을때
+
+    // 매개변수: 발생하는 이벤트
+    function func(e){
+      // 발생한 이벤트의 종류, 이벤트가 발생된 대상, 입력된 값
+      console.log(e.type, e.target, e.target.value);
+    }
+
+   </script>
+
+
+</body>
+</html>

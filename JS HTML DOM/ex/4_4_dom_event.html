@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+</head>
+<body>
+  <!-- 1.이벤트를 등록하는 방법 -->
+  <!-- html 코드를 작성할때 속성에 추가 -->
+  <button onclick="onClick()">클릭</button>
+  <button id="btn">클릭</button>
+  <select id="sel" onchange="onChange(event)">
+    <option value="KO">Korea</option>
+    <option value="CN">China</option>
+    <option value="JP">Japan</option>
+  </select>
+  <input type="text" onfocus="onFocus()" onblur="onBlur()">
+
+
+  <script>
+    // 마우스 이벤트 처리
+    function onClick(){
+      console.log('버튼을 클릭했습니다');
+    }
+    // 2. 문서가 만들어진 후에 이벤트리스너로 이벤트 등록
+    const button2 = document.getElementById('btn');
+    // 인자: 이벤트 종류, 실행함수
+    button2.addEventListener('click',()=>{
+      alert('버튼을 클릭했습니다');
+    });
+
+    // 선택된 값이 변경되었을때 이벤트가 발생됨
+    function onChange(event){
+      console.log(event.target.value);
+    }
+
+    // 입력필드에 마우스 포커스가 들어가면 발생됨
+    function onFocus(){
+      console.log('onFocus');
+    }
+
+    // 입력필드에 마우스 포커스가 빠져나가면 발생됨
+    function onBlur(){
+      console.log('onBlur');
+    }
+
+  </script>
+
+
+</body>
+</html>
