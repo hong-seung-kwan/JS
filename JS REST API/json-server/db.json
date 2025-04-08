@@ -1,0 +1,15 @@
+{
+  "boards": [],
+  "comments": [
+    {
+      "id": "1",
+      "cotent": "1번 게시물의 댓글",
+      "boardNo": 1
+    },
+    {
+      "id": "2",
+      "cotent": "1번 게시물의 댓글",
+      "boardNo": 1
+    }
+  ]
+}
