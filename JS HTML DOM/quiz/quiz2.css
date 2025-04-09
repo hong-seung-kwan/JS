@@ -1,0 +1,15 @@
+body{
+  width: 50%;
+  margin-left: 30px;
+}
+ul{
+  list-style: none;
+}
+#personInfo label{
+  display: inline-block;
+  width: 100px;
+}
+
+#personInfo input {
+  margin-left: 20px;
+}

@@ -1,0 +1,17 @@
+body{
+  margin-left: 30px;
+}
+ul{
+  list-style: none;
+}
+#personInfo label{
+  display: inline-block;
+  width: 50px;
+}
+textarea {
+  width: 300px;
+  height: 120px;
+}
+.border-red {
+  border: 1px solid red;
+}

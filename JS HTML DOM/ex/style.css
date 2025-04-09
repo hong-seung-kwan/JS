@@ -1,0 +1,119 @@
+/* 바디 스타일 */
+/* container를 가운데 정렬 */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 타이틀 */
+h2 {
+  margin-bottom: 20px;
+}
+
+/* 입력필드가 있는 box */
+#todo-div {
+  display: flex;
+}
+
+/* 입력필드 */
+#todo-input {
+  width: 200px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+  /*남는 여백이 발생하면 입력필드가 차지*/
+  flex-grow: 1;
+}
+/* 추가버튼 */
+#add-btn {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 1.5rem; /*글자크기 1.5배*/
+  cursor: pointer; /*커서 모양 바꾸기*/
+}
+
+/* 버튼 위에 마우스 올리면 배경색 변경 */
+#add-btn:hover {
+  background-color: #b0b0b0;
+}
+/* 리스트 스타일 */
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  
+}
+
+/* 리스트 항목 스타일 */
+#todo-list li {
+  font-size: 1.2rem;
+  padding: 5px 0;
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+  align-items: center;
+}
+
+/* count */
+#todo-count {
+  margin-bottom: 20px;
+}
+/* 삭제 버튼 */
+#delete-all-btn {
+  width: 100px;
+  height: 30px;
+  background-color: #d3d3d3;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+#delete-all-btn:hover {
+  background-color: #b0b0b0;
+}
+
+/* 체크 박스 스타일 - 토글 이벤트 */
+/* 클래스 이름을 사용해서 스타일을 미리 작성 */
+.complete * {
+  color: rgb(155, 155, 155);
+  text-decoration: line-through;
+}
+
+/* li 태그 안에 체크박스 */
+/* 속성 선택자를 사용 */
+li input[type='checkbox'] {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+li input[type='text']{
+  width: 200px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+li button {
+  width: 50px;
+  height: 30px;
+  margin-left: 10px;
+  background-color: #d3d3d3;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+/* 버튼 이벤트 */
+li button:hover {
+  background-color: #b0b0b0;
+}
