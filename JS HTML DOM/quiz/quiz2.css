@@ -4,12 +4,21 @@ body{
 }
 ul{
   list-style: none;
+  padding: 0;
 }
-#personInfo label{
+.labels{
   display: inline-block;
-  width: 100px;
+  width: 120px;
+  text-align: right;
 }
 
 #personInfo input {
   margin-left: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,tr{
+  border: 1px solid black;
 }
