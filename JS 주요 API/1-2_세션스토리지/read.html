@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+</head>
+<body>
+  msg:
+  <div id="msg"></div>
+  person:
+  <div>
+    <span id="name"></span>
+    <span id="age"></span>
+  </div>
+
+  <script>
+    const msg = document.getElementById("msg");
+    const name = document.getElementById("name");
+    const age = document.getElementById("age");
+
+    if(typeof Storage !== "undefined"){
+      // 스토리지에 저장된 데이터를 키로 꺼내기
+      let message = sessionStorage.getItem("message");
+      msg.textContent = message;
+
+      // 꺼낸 데이터를 객체로 반환하기
+      let person = sessionStorage.getItem("person");
+      let personObj = JSON.parse(person);
+      name.textContent = personObj.name;
+      age.textContent = personObj.age;
+    }
+  </script>
+</body>
+</html>
